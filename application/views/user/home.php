@@ -80,7 +80,7 @@ Start About Section
                     <div class="col-md-6 col-sm-6 col-xs-12">
                         <div class="service-item">
                             <i class="fa fa-shield"></i>
-                            <h4>Keamanan Sitem</h4>
+                            <h4>Security System</h4>
                             <p>Memberikan keamanan sitem anda.</p>
                         </div>
                     </div><!-- END COL -->

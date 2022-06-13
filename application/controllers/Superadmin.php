@@ -43,7 +43,29 @@ class Superadmin extends CI_Controller
     {
         $var['title'] = 'Superadmin | List User';
         $var['list'] = $this->m_bikea->get_admin();
+        $var['edit'] = $this->m_bikea->get_admin();
         $this->load->view('superadmin/list_admin', $var);
+    }
+
+    public function save_admin()
+    {
+        $this->m_bikea->save_admin();
+        $this->session->set_flashdata('success_create', true);
+        redirect('Superadmin/list_admin');
+    }
+
+    public function update_admin()
+    {
+        $this->m_bikea->update_admin();
+        $this->session->set_flashdata('success_update', true);
+        redirect('Superadmin/list_admin');
+    }
+
+    public function delete_admin($id)
+    {
+        $this->db->delete('admin', ['id' => $id]);
+        $this->session->set_flashdata('success_delete', true);
+        redirect('Superadmin/list_admin');
     }
 
 }
