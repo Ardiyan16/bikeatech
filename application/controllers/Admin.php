@@ -128,8 +128,8 @@ class Admin extends CI_Controller
     {
         $var['title'] = 'Admin | Portfolio';
         $var['portfolio'] = $this->m_bikea->get_portfolio();
-        // $var['team2'] = $this->m_bikea->get_team();
-        // $var['team3'] = $this->m_bikea->get_team();
+        $var['detail'] = $this->m_bikea->get_portfolio();
+        // var_dump($var['portfolio']);
         $this->load->view('admin/portfolio', $var);
     }
 
@@ -137,6 +137,7 @@ class Admin extends CI_Controller
     {
         $var['title'] = 'Admin | Add Portfolio';
         $var['partner'] = $this->m_bikea->get_partner();
+        $var['category'] = $this->m_bikea->get_category();
         $this->load->view('admin/create_portfolio', $var);
     }
 
@@ -147,9 +148,89 @@ class Admin extends CI_Controller
         redirect('Admin/portfolio');
     }
 
+    public function edit_portfolio($id)
+    {
+        $var['title'] = 'Admin | Edit Portfolio';
+        $var['partner'] = $this->m_bikea->get_partner();
+        $var['category'] = $this->m_bikea->get_category();
+        $var['edit'] = $this->db->get_where('portfolio', ['id' => $id])->row();
+        $this->load->view('admin/edit_portfolio', $var);
+    }
+
+    public function update_portfolio()
+    {
+        $this->m_bikea->update_portfolio();
+        $this->session->set_flashdata('success_update', true);
+        redirect('Admin/portfolio');
+    }
+
+    public function delete_portfolio($id)
+    {
+        $this->db->delete('portfolio', ['id' => $id]);
+        $this->session->set_flashdata('success_delete', true);
+        redirect('Admin/portfolio');
+    }
+
     public function category()
     {
-        
+        $var['title'] = 'Admin | Category';
+        $var['category'] = $this->m_bikea->get_category();
+        $this->load->view('admin/category', $var);
+    }
+
+    public function save_category()
+    {
+        $data = [
+            'category' => $this->input->post('category')
+        ];
+        $this->db->insert('category_portfolio', $data);
+        $this->session->set_flashdata('success_create', true);
+        redirect('Admin/category');
+    }
+
+    public function delete_category($id)
+    {
+        $this->db->delete('category_portfolio', ['id_cat' => $id]);
+        $this->session->set_flashdata('success_delete', true);
+        redirect('Admin/category');
+    }
+
+    public function images_portfolio()
+    {
+        $var['title'] = 'Admin | Images Portfolio';
+        $var['images_portfolio'] = $this->m_bikea->get_images();
+        $var['images_portfolio2'] = $this->m_bikea->get_images();
+        $var['portfolio'] = $this->db->get('portfolio')->result();
+        $this->load->view('admin/images_portfolio', $var);
+    }
+
+    public function save_images()
+    {
+        $this->m_bikea->save_images();
+        $this->session->set_flashdata('success_create', true);
+        redirect('Admin/images_portfolio');
+    }
+
+    public function update_images()
+    {
+        $this->m_bikea->update_images();
+        $this->session->set_flashdata('success_update', true);
+        redirect('Admin/images_portfolio');
+    }
+
+    public function message()
+    {
+        $var['title'] = 'Admin | Message';
+        $var['message'] = $this->m_bikea->get_message();
+        $var['message2'] = $this->m_bikea->get_message();
+        $this->load->view('admin/message', $var);
+    }
+
+    public function delete_message($id)
+    {
+        $this->db->delete('message', ['id' => $id]);
+        $this->session->set_flashdata('success_delete', true);
+        redirect('Admin/message');
     }
 
 }

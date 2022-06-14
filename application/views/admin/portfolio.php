@@ -10,7 +10,7 @@
 
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <a href="<?= base_url('Admin/create_portfolio') ?>"  class="btn btn-primary"><i class="fa fa-plus-circle"></i> Add Portfolio</a>
+            <a href="<?= base_url('Admin/create_portfolio') ?>" class="btn btn-primary"><i class="fa fa-plus-circle"></i> Add Portfolio</a>
         </div>
         <div class="card-body">
             <div class="table-responsive">
@@ -33,11 +33,11 @@
                                 <td><?= $por->title ?></td>
                                 <td><?= date('d-m-Y', strtotime($por->date)) ?></td>
                                 <td><?= $por->category ?></td>
-                                <td><img src="<?= base_url('assets/img/partner/' . $por->name_partner) ?>"></td>
+                                <td><img src="<?= base_url('assets/img/images_partner/' . $por->images) ?>" width="70"></td>
                                 <td>
-                                    <a href="#detail<?= $por->id ?>" data-toggle="modal" title="Detail" style="color: white;" class="badge bg-success"><i class="fa fa-eye"></i></a>
-                                    <a href="#editteam<?= $por->id ?>" title="Edit" data-toggle="modal" class="badge bg-primary" style="color: white;"><i class="fa fa-edit"></i></a> |
-                                    <a href="<?= base_url('Admin/delete_team/' . $por->id) ?>" onclick="return confirm('are you sure delete data ?')" title="Delete" class="badge bg-danger" style="color: white" ;><i class="fa fa-trash"></i></a>
+                                    <a href="#detail<?= $por->id ?>" data-toggle="modal" title="Detail" style="color: white;" class="badge bg-success"><i class="fa fa-eye"></i></a> |
+                                    <a href="<?= base_url('Admin/edit_portfolio/' . $por->id) ?>" title="Edit" class="badge bg-primary" style="color: white;"><i class="fa fa-edit"></i></a> |
+                                    <a href="<?= base_url('Admin/delete_portfolio/' . $por->id) ?>" onclick="return confirm('are you sure delete data ?')" title="Delete" class="badge bg-danger" style="color: white" ;><i class="fa fa-trash"></i></a>
                                 </td>
                             </tr>
                         <?php } ?>
@@ -47,6 +47,33 @@
         </div>
     </div>
 </div>
+<?php foreach ($detail as $dtl) { ?>
+    <div class="modal fade" id="detail<?= $dtl->id ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div class="modal-dialog modal-xl" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Detail Portfolio</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="text-center">
+                        <h5>Picture Portfolio</h5>
+                        <img src="<?= base_url('assets/img/images_portfolio/' . $dtl->picture) ?>" height="350" width="500">
+                    </div>
+                    <br>
+                    <hr>
+                    <h5>Description</h5>
+                    <p><?= $dtl->description ?></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+<?php } ?>
 <script>
     <?php if ($this->session->flashdata('success_create')) : ?>
         Swal.fire({

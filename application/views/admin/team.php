@@ -50,7 +50,7 @@
 <div class="modal fade" id="createteam" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
-            <form action="<?= base_url('Admin/save_team'); ?>" method="POST">
+            <form action="<?= base_url('Admin/save_team'); ?>" method="POST" enctype="multipart/form-data">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLongTitle">Add Team</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -73,6 +73,9 @@
                     <label>Skill</label>
                     <input name="skill" type="text" placeholder="Skill..." required class="form-control">
                     <br>
+                    <label>Picture</label>
+                    <input name="picture" type="file" placeholder="..." required class="form-control">
+                    <p>Maximum size 3 MB</p>
                     <button type="reset" class="btn btn-warning"><span class="fa fa-undo"></span> Reset</button>
                     <button type="submit" class="btn btn-primary"><span class="fa fa-save"></span> Save</button>
                 </div>
@@ -112,6 +115,11 @@
                         <label>Skill</label>
                         <input name="skill" type="text" value="<?= $edit->skill ?>" placeholder="Skill..." required class="form-control">
                         <br>
+                        <label>Picture</label>
+                        <input type="hidden" name="old_picture" value="<?= $edit->picture ?>">
+                        <input name="picture" type="file" placeholder="..." class="form-control">
+                        <img src="<?= base_url('assets/img/images_team/' . $edit->picture) ?>" width="200">
+                        <p>Maximum size 3 MB</p>
                         <button type="reset" class="btn btn-warning"><span class="fa fa-undo"></span> Reset</button>
                         <button type="submit" class="btn btn-primary"><span class="fa fa-save"></span> Save</button>
                     </div>
@@ -135,6 +143,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
+                    <img src="<?= base_url('assets/img/images_team/' . $det->picture) ?>" width="200">
                     <p><?= $det->description ?></p>
                 </div>
                 <div class="modal-footer">

@@ -91,49 +91,14 @@ Start About Section
 </section> <!-- End section -->
 
 <!--
-Start About Section
-==================================== -->
-<section class="about-2 section" id="about">
-    <div class="container">
-        <div class="row">
-
-            <!-- section title -->
-            <div class="col-12">
-                <div class="title text-center">
-                    <h2>We Are Bingo Agency</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam reprehenderit accusamus labore iusto,
-                        aut, eum itaque illo totam tempora eius.</p>
-                    <div class="border"></div>
-                </div>
-            </div>
-            <!-- /section title -->
-
-            <div class="col-md-6">
-                <img src="images/about/about-2.png" class="img-fluid" alt="">
-            </div>
-            <div class="col-md-6">
-                <ul class="checklist">
-                    <li>Donec sed odio dui. Aenean eu leo quam. Pellentesque ornare sem laca quam venenatis vestibulum.</li>
-                    <li>Aenean quam. Pellentesque ornare sem laca quam venenatis vestibulum.</li>
-                    <li>Donec sed odio dui. Aenean eu leo quam. Pellentesque ornare sem laca quam venenatis vestibulum.</li>
-                    <li>Etiam porta sem multipage evint landing magna mollis euismod a pharetra augue.</li>
-                    <li>Aenean quam. Pellentesque ornare sem laca quam venenatis vestibulum.</li>
-                </ul>
-                <a href="#" class="btn btn-main mt-20">Learn More</a>
-            </div>
-        </div> <!-- End row -->
-    </div> <!-- End container -->
-</section> <!-- End section -->
-
-<!--
 Start Call To Action
 ==================================== -->
 <section class="call-to-action section">
     <div class="container">
         <div class="row">
             <div class="col-md-12 text-center">
-                <h2>Let's Create Something Together</h2>
-                <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicudin bibendum auctor, <br> nisi elit consequat ipsum, nesagittis sem nid elit. Duis sed odio sitain elit.</p>
+                <h2>Mari mempermudah pengelolaan bisnis anda dengan teknologi informasi</h2>
+                <!-- <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicudin bibendum auctor, <br> nisi elit consequat ipsum, nesagittis sem nid elit. Duis sed odio sitain elit.</p> -->
                 <a href="" class="btn btn-main">Contact Us</a>
             </div>
         </div> <!-- End row -->
@@ -149,18 +114,19 @@ Start Call To Action
         <div class="row">
             <div class="col-md-12 text-center">
                 <div class="title">
-                    <h2>Award-Winning Agency</h2>
-                    <p>Vestibulum nisl tortor, consectetur quis imperdiet bibendum, laoreet sed arcu. Sed condimentum iaculis ex, in faucibus lorem accumsan non. Donec mattis tincidunt metus. Morbi sed tortor a risus luctus dignissim.</p>
+                    <h2>Komitmen Bersama Anda</h2>
+                    <p>Membangun konsep dan mengimplementasikan proses bisnis yang berkelanjutan bersama anda untuk mencapai improvisasi setuai target anda
+                        memlalui sistem informasi yang terintegrasi.</p>
                 </div>
             </div>
             <!-- first count item -->
             <div class="col-md-3 col-sm-6 col-xs-6 text-center ">
                 <div class="counters-item">
-                    <i class="tf-ion-ios-alarm-outline"></i>
+                    <i class="fa fa-users"></i>
                     <div>
-                        <span class="counter" data-count="150">0</span>
+                        <span class="counter" data-count="<?= $count_partner ?>">0</span>
                     </div>
-                    <h3>Happy Clients</h3>
+                    <h3>Partner</h3>
                 </div>
             </div>
             <!-- end first count item -->
@@ -168,9 +134,9 @@ Start Call To Action
             <!-- second count item -->
             <div class="col-md-3 col-sm-6 col-xs-6 text-center ">
                 <div class="counters-item">
-                    <i class="tf-ion-ios-analytics-outline"></i>
+                    <i class="fa fa-briefcase"></i>
                     <div>
-                        <span class="counter" data-count="130">0</span>
+                        <span class="counter" data-count="<?= $count_portfolio ?>">0</span>
                     </div>
                     <h3>Projects completed</h3>
                 </div>
@@ -180,11 +146,11 @@ Start Call To Action
             <!-- third count item -->
             <div class="col-md-3 col-sm-6 col-xs-6 text-center ">
                 <div class="counters-item">
-                    <i class="tf-ion-ios-compose-outline"></i>
+                    <i class="fa fa-comment"></i>
                     <div>
                         <span class="counter" data-count="99">0</span>
                     </div>
-                    <h3>Positive feedback</h3>
+                    <h3>Feedback</h3>
 
                 </div>
             </div>
@@ -193,11 +159,11 @@ Start Call To Action
             <!-- fourth count item -->
             <div class="col-md-3 col-sm-6 col-xs-6 text-center ">
                 <div class="counters-item kill-border">
-                    <i class="tf-ion-ios-bolt-outline"></i>
+                    <i class="fa fa-users"></i>
                     <div>
-                        <span class="counter" data-count="250">0</span>
+                        <span class="counter" data-count="<?= $count_team ?>">0</span>
                     </div>
-                    <h3>Cups of Coffee</h3>
+                    <h3>Team</h3>
                 </div>
             </div>
             <!-- end fourth count item -->
@@ -205,79 +171,89 @@ Start Call To Action
     </div> <!-- end container -->
 </section> <!-- end section -->
 
-<!-- Start Testimonial
-=========================================== -->
 
-<section class="testimonial section" id="testimonial">
+<section class="team-skills section-sm" id="skills">
     <div class="container">
         <div class="row">
-            <div class="col-lg-12">
-                <!-- testimonial wrapper -->
-                <div class="testimonial-slider">
-                    <!-- testimonial single -->
-                    <div class="item text-center">
-                        <i class="tf-ion-chatbubbles"></i>
-                        <!-- client info -->
-                        <div class="client-details">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum nulla, soluta dolorum. Eos earum, magni asperiores, unde corporis labore, enim, voluptatum officiis voluptates alias natus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, officia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod, quia?</p>
-                        </div>
-                        <!-- /client info -->
-                        <!-- client photo -->
-                        <div class="client-thumb">
-                            <img src="images/client-logo/clients-1.jpg" class="img-fluid" alt="">
-                        </div>
-                        <div class="client-meta">
-                            <h3>William Martin</h3>
-                            <span>CEO , Company Name</span>
-                        </div>
-                        <!-- /client photo -->
-                    </div>
-                    <!-- /testimonial single -->
 
-                    <!-- testimonial single -->
-                    <div class="item text-center">
-                        <i class="tf-ion-chatbubbles"></i>
-                        <!-- client info -->
-                        <div class="client-details">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum nulla, soluta dolorum. Eos earum, magni asperiores, unde corporis labore, enim, voluptatum officiis voluptates alias natus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, officia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod, quia?</p>
-                        </div>
-                        <!-- /client info -->
-                        <!-- client photo -->
-                        <div class="client-thumb">
-                            <img src="images/client-logo/clients-2.jpg" class="img-fluid" alt="">
-                        </div>
-                        <div class="client-meta">
-                            <h3>Emma Harrison</h3>
-                            <span>CEO , Company Name</span>
-                        </div>
-                        <!-- /client photo -->
-                    </div>
-                    <!-- /testimonial single -->
-
-                    <!-- testimonial single -->
-                    <div class="item text-center">
-                        <i class="tf-ion-chatbubbles"></i>
-                        <!-- client info -->
-                        <div class="client-details">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum nulla, soluta dolorum. Eos earum, magni asperiores, unde corporis labore, enim, voluptatum officiis voluptates alias natus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, officia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod, quia?</p>
-                        </div>
-                        <!-- /client info -->
-                        <!-- client photo -->
-                        <div class="client-thumb">
-                            <img src="images/client-logo/clients-3.jpg" class="img-fluid" alt="">
-                        </div>
-                        <div class="client-meta">
-                            <h3>Alexander Lucas</h3>
-                            <span>CEO , Company Name</span>
-                        </div>
-                        <!-- /client photo -->
-                    </div>
-                    <!-- /testimonial single -->
+            <!-- section title -->
+            <div class="col-12">
+                <div class="title text-center">
+                    <h2>Our Skills</h2>
+                    <p>Berikut adalah kemampuan kami di bidang IT.</p>
+                    <div class="border"></div>
                 </div>
-            </div> <!-- end col lg 12 -->
+            </div>
+            <!-- /section title -->
+
+            <div class="col-md-5">
+                <div class="team-skills-content">
+                    <h2>Simple To Start</h2>
+                    <p>Tim kami memiliki beberapa kemampuan dalam beberapa bidang IT sesuai dengan standart yang telah ditetapkan oleh perusahaan kami.</p>
+                    <a href="" class="btn btn-main mt-20">Contact Us</a>
+                </div>
+            </div>
+            <div class="col-md-6 col-md-offset-1">
+                <div class="progress-block">
+                    <ul>
+                        <li>
+                            <span>Design</span>
+                            <div class="progress">
+                                <div class="progress-bar" title="80%" style="width: 80%;">
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <span>Website Development</span>
+                            <div class="progress">
+                                <div class="progress-bar" title="90%" style="width: 90%;">
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <span>Mobile Development</span>
+                            <div class="progress">
+                                <div class="progress-bar" title="80&" style="width: 80%;">
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <span>Network</span>
+                            <div class="progress">
+                                <div class="progress-bar" title="*70%" style="width: 70%;">
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
         </div> <!-- End row -->
     </div> <!-- End container -->
-</section> <!-- End Section -->
+</section> <!-- End section -->
+
+<section class="team-skills section-sm" id="partner">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="title text-center">
+                    <h2>Partner</h2>
+                    <p>Berikut adalah partner kami.</p>
+                    <div class="border"></div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div>
+                    <?php foreach ($partner as $par) { ?>
+                        <img src="<?= base_url('assets/img/images_partner/' . $par->images) ?>" title="<?= $par->name_partner ?>" width="200" alt="">
+                    <?php } ?>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
 <!--
 		Start Blog Section
@@ -292,61 +268,32 @@ Start Call To Action
                 <div class="title text-center ">
                     <h2> Latest <span class="color">Posts</span></h2>
                     <div class="border"></div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus facere accusamus, reprehenderit libero
-                        inventore nam.</p>
+                    <p>Blog kami berisi mengenai beberapa artikel yang membantu wawasan anda mengenai dunia IT dan beberapa penjelasan mengnai dunia IT.</p>
                 </div>
             </div>
             <!-- /section title -->
             <!-- single blog post -->
-            <article class="col-md-4 col-sm-6 col-xs-12 clearfix ">
-                <div class="post-item">
-                    <div class="media-wrapper">
-                        <img src="images/blog/post-1.jpg" alt="amazing caves coverimage" class="img-fluid">
-                    </div>
+            <?php foreach ($blog as $bg) { ?>
+                <article class="col-md-4 col-sm-6 col-xs-12 clearfix ">
+                    <div class="post-item">
+                        <div class="media-wrapper">
+                            <img src="<?= base_url('assets/img/images_blog/' . $bg->images) ?>" alt="amazing caves coverimage" class="img-fluid">
+                        </div>
 
-                    <div class="content">
-                        <h3><a href="single-post.html">Reasons to Smile</a></h3>
-                        <p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf
-                            moon officia aute, non skateboard dolor brunch.</p>
-                        <a class="btn btn-main" href="single-post.html">Read more</a>
+                        <div class="content">
+                            <h3><a href="<?= base_url('Users/detail_blog/' . $bg->title) ?>"><?= $bg->title ?></a></h3>
+                            <!-- <p>
+                                <?php $paragraf = substr($bg->description, 0, 300);
+                                echo $paragraf;
+                                ?>
+                            </p> -->
+                            <hr>
+                            <a class="btn btn-main" href="<?= base_url('Users/detail_blog/' . $bg->title) ?>">Read more</a>
+                        </div>
                     </div>
-                </div>
-            </article>
+                </article>
+            <?php } ?>
             <!-- /single blog post -->
-
-            <!-- single blog post -->
-            <article class="col-md-4 col-sm-6 col-xs-12 ">
-                <div class="post-item">
-                    <div class="media-wrapper">
-                        <img src="images/blog/post-2.jpg" alt="amazing caves coverimage" class="img-fluid">
-                    </div>
-
-                    <div class="content">
-                        <h3><a href="single-post.html">A Few Moments</a></h3>
-                        <p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf
-                            moon officia aute, non skateboard dolor brunch.</p>
-                        <a class="btn btn-main" href="single-post.html">Read more</a>
-                    </div>
-                </div>
-            </article>
-            <!-- end single blog post -->
-
-            <!-- single blog post -->
-            <article class="col-md-4 col-sm-6 col-xs-12 ">
-                <div class="post-item">
-                    <div class="media-wrapper">
-                        <img src="images/blog/post-3.jpg" alt="amazing caves coverimage" class="img-fluid">
-                    </div>
-
-                    <div class="content">
-                        <h3><a href="single-post.html">Hints for Life</a></h3>
-                        <p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf
-                            moon officia aute, non skateboard dolor brunch.</p>
-                        <a class="btn btn-main" href="single-post.html">Read more</a>
-                    </div>
-                </div>
-            </article>
-            <!-- end single blog post -->
         </div> <!-- end row -->
     </div> <!-- end container -->
 </section> <!-- end section -->

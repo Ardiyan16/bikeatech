@@ -10,7 +10,7 @@
 
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <<form action="<?php echo base_url(); ?>admin/save_kebutuhan" method="post" class="row">
+            <form action="<?php echo base_url(); ?>admin/save_category" method="post" class="row">
                 <div class="col-md-2">
                     <input type="text" id="category" name="category" class="form-control">
                 </div>
@@ -23,23 +23,18 @@
                     <thead>
                         <tr>
                             <th>No</th>
-                            <th>Name Partner</th>
-                            <th>Address</th>
-                            <th>Images</th>
+                            <th>Category</th>
                             <th>Option</th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php $no = 1;
-                        foreach ($partner as $pt) { ?>
+                        foreach ($category as $cat) { ?>
                             <tr>
                                 <td><?= $no++ ?></td>
-                                <td><?= $pt->name_partner ?></td>
-                                <td><?= $pt->address ?></td>
-                                <td><img src="<?= base_url('assets/img/images_partner/' . $pt->images) ?>" width="64"></td>
+                                <td><?= $cat->category ?></td>
                                 <td>
-                                    <a href="#editpartner<?= $pt->id ?>" title="Edit" data-toggle="modal" class="badge bg-primary" style="color: white;"><i class="fa fa-edit"></i></a> |
-                                    <a href="<?= base_url('Admin/delete_partner/' . $pt->id) ?>" onclick="return confirm('are you sure delete data ?')" title="Delete" class="badge bg-danger" style="color: white" ;><i class="fa fa-trash"></i></a>
+                                    <a href="<?= base_url('Admin/delete_category/' . $cat->id_cat) ?>" onclick="return confirm('are you sure delete data ?')" title="Delete" class="badge bg-danger" style="color: white" ;><i class="fa fa-trash"></i></a>
                                 </td>
                             </tr>
                         <?php } ?>
@@ -49,4 +44,22 @@
         </div>
     </div>
 </div>
+<script>
+    <?php if ($this->session->flashdata('success_create')) : ?>
+        Swal.fire({
+            icon: 'success',
+            title: 'created data successful!',
+            showConfirmButton: true,
+            // timer: 1500
+        })
+
+    <?php elseif ($this->session->flashdata('success_delete')) : ?>
+        Swal.fire({
+            icon: 'success',
+            title: 'delete data successful!',
+            showConfirmButton: true,
+            // timer: 1500
+        })
+    <?php endif ?>
+</script>
 <?php $this->load->view('partials/footer.php') ?>

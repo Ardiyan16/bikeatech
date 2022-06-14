@@ -36,6 +36,8 @@
     <!-- Main Stylesheet -->
     <link rel="stylesheet" href="<?= base_url() ?>assets/users/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <script src="<?= base_url() ?>assets/admin/js/sweetalert2-all.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
 </head>
 
@@ -80,33 +82,28 @@ Fixed Navigation
 
                 <div class="collapse navbar-collapse" id="navigation">
                     <ul class="navbar-nav ml-auto text-center">
-                        <li class="nav-item dropdown active">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Homepage
+                        <li class="nav-item">
+                            <a class="nav-link" href="<?= base_url('Users') ?>">
+                                Home
                             </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="index.html">Homepage</a>
-                                <a class="dropdown-item" href="onepage-slider.html">Onepage</a>
-                                <a class="dropdown-item" href="onepage-text.html">Onepage 2</a>
-                            </div>
                         </li>
                         <li class="nav-item ">
-                            <a class="nav-link" href="about.html">About Us</a>
+                            <a class="nav-link" href="<?= base_url('Users/about') ?>">About Us</a>
                         </li>
                         <li class="nav-item ">
-                            <a class="nav-link" href="service.html">Services</a>
+                            <a class="nav-link" href="<?= base_url('Users/service') ?>">Services</a>
                         </li>
                         <li class="nav-item ">
-                            <a class="nav-link" href="portfolio.html">Portfolio</a>
+                            <a class="nav-link" href="<?= base_url('Users/portfolio') ?>">Portfolio</a>
                         </li>
                         <!-- <li class="nav-item ">
                             <a class="nav-link" href="team.html">Team</a>
                         </li> -->
                         <li class="nav-item ">
-                            <a class="nav-link" href="pricing.html">Blog</a>
+                            <a class="nav-link" href="<?= base_url('Users/blog') ?>">Blog</a>
                         </li>
                         <li class="nav-item ">
-                            <a class="nav-link" href="contact.html">Contact</a>
+                            <a class="nav-link" href="<?= base_url('Users/contact') ?>">Contact</a>
                         </li>
                     </ul>
                 </div>
