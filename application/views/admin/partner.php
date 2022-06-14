@@ -10,7 +10,7 @@
 
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <a href="#createpartner" data-toggle="modal" class="btn btn-primary"><i class="fa fa-plus-circle"></i> Tambah Partner</a>
+            <a href="#createpartner" data-toggle="modal" class="btn btn-primary"><i class="fa fa-plus-circle"></i> Add Partner</a>
         </div>
         <div class="card-body">
             <div class="table-responsive">
@@ -31,9 +31,9 @@
                                 <td><?= $no++ ?></td>
                                 <td><?= $pt->name_partner ?></td>
                                 <td><?= $pt->address ?></td>
-                                <td><img src="<?= base_url('assets/img/images_partner/' . $pt->images) ?>"></td>
+                                <td><img src="<?= base_url('assets/img/images_partner/' . $pt->images) ?>" width="64"></td>
                                 <td>
-                                    <a href="<?= base_url('Admin/edit_partner/' . $pt->id) ?>" title="Edit" class="badge bg-primary" style="color: white;"><i class="fa fa-edit"></i></a> |
+                                    <a href="#editpartner<?= $pt->id ?>" title="Edit" data-toggle="modal" class="badge bg-primary" style="color: white;"><i class="fa fa-edit"></i></a> |
                                     <a href="<?= base_url('Admin/delete_partner/' . $pt->id) ?>" onclick="return confirm('are you sure delete data ?')" title="Delete" class="badge bg-danger" style="color: white" ;><i class="fa fa-trash"></i></a>
                                 </td>
                             </tr>
@@ -44,27 +44,72 @@
         </div>
     </div>
 </div>
-<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+<div class="modal fade" id="createpartner" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <form action="<?= base_url('Admin/save_partner'); ?>" method="POST" enctype="multipart/form-data">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                    <h5 class="modal-title" id="exampleModalLongTitle">Add Partner</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
-
+                    <label>Name Partner</label>
+                    <input name="name_partner" type="text" placeholder="Name..." class="form-control" required>
+                    <br>
+                    <label>Address</label>
+                    <input name="address" type="text" placeholder="Address..." class="form-control" required>
+                    <br>
+                    <label>Images</label>
+                    <input name="images" type="file" placeholder="..." required class="form-control">
+                    <p>Maximum size 3 MB</p>
+                    <button type="reset" class="btn btn-warning"><span class="fa fa-undo"></span> Reset</button>
+                    <button type="submit" class="btn btn-primary"><span class="fa fa-save"></span> Save</button>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
                 </div>
             </form>
         </div>
     </div>
 </div>
+
+<?php foreach ($partner2 as $edit) { ?>
+    <div class="modal fade" id="editpartner<?= $edit->id ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <form action="<?= base_url('Admin/update_partner'); ?>" method="POST" enctype="multipart/form-data">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Edit Partner</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <label>Name Partner</label>
+                        <input type="hidden" name="id" value="<?= $edit->id ?>">
+                        <input name="name_partner" value="<?= $edit->name_partner ?>" type="text" placeholder="Name..." class="form-control" required>
+                        <br>
+                        <label>Address</label>
+                        <input name="address" value="<?= $edit->address ?>" type="text" placeholder="Address..." class="form-control" required>
+                        <br>
+                        <label>Images</label>
+                        <input type="hidden" name="old_images" value="<?= $edit->images ?>">
+                        <input name="images" type="file" placeholder="..." class="form-control">
+                        <img src="<?= base_url('assets/img/images_partner/'. $edit->images ) ?>" width="100">
+                        <p>Maximum size 3 MB</p>
+                        <button type="reset" class="btn btn-warning"><span class="fa fa-undo"></span> Reset</button>
+                        <button type="submit" class="btn btn-primary"><span class="fa fa-save"></span> Save</button>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+<?php } ?>
 <script>
     <?php if ($this->session->flashdata('success_create')) : ?>
         Swal.fire({

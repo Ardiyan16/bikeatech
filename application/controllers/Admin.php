@@ -69,7 +69,87 @@ class Admin extends CI_Controller
     {
         $var['title'] = 'Admin | Partner';
         $var['partner'] = $this->m_bikea->get_partner();
+        $var['partner2'] = $this->m_bikea->get_partner();
         $this->load->view('admin/partner', $var);
+    }
+
+    public function save_partner()
+    {
+        $this->m_bikea->save_partner();
+        $this->session->set_flashdata('success_create', true);
+        redirect('Admin/partner');
+    }
+
+    public function update_partner()
+    {
+        $this->m_bikea->update_partner();
+        $this->session->set_flashdata('success_update', true);
+        redirect('Admin/partner');
+    }
+
+    public function delete_partner($id)
+    {
+        $this->db->delete('partner', ['id' => $id]);
+        $this->session->set_flashdata('success_delete', true);
+        redirect('Admin/partner');
+    }
+
+    public function team()
+    {
+        $var['title'] = 'Admin | Team';
+        $var['team'] = $this->m_bikea->get_team();
+        $var['team2'] = $this->m_bikea->get_team();
+        $var['team3'] = $this->m_bikea->get_team();
+        $this->load->view('admin/team', $var);
+    }
+
+    public function save_team()
+    {
+        $this->m_bikea->save_team();
+        $this->session->set_flashdata('success_create', true);
+        redirect('Admin/team');
+    }
+
+    public function update_team()
+    {
+        $this->m_bikea->update_team();
+        $this->session->set_flashdata('success_update', true);
+        redirect('Admin/team');
+    }
+
+    public function delete_team($id)
+    {
+        $this->db->delete('team', ['id' => $id]);
+        $this->session->set_flashdata('success_delete', true);
+        redirect('Admin/team');
+    }
+
+    public function portfolio()
+    {
+        $var['title'] = 'Admin | Portfolio';
+        $var['portfolio'] = $this->m_bikea->get_portfolio();
+        // $var['team2'] = $this->m_bikea->get_team();
+        // $var['team3'] = $this->m_bikea->get_team();
+        $this->load->view('admin/portfolio', $var);
+    }
+
+    public function create_portfolio()
+    {
+        $var['title'] = 'Admin | Add Portfolio';
+        $var['partner'] = $this->m_bikea->get_partner();
+        $this->load->view('admin/create_portfolio', $var);
+    }
+
+    public function save_portfolio()
+    {
+        $this->m_bikea->save_portfolio();
+        $this->session->set_flashdata('success_create', true);
+        redirect('Admin/portfolio');
+    }
+
+    public function category()
+    {
+        
     }
 
 }

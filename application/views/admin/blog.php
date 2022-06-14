@@ -10,7 +10,7 @@
 
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <a href="<?= base_url('Admin/create_blog') ?>" class="btn btn-primary"><i class="fa fa-plus-circle"></i> Tambah Blog</a>
+            <a href="<?= base_url('Admin/create_blog') ?>" class="btn btn-primary"><i class="fa fa-plus-circle"></i> Add Blog</a>
         </div>
         <div class="card-body">
             <div class="table-responsive">
@@ -32,7 +32,7 @@
                             <tr>
                                 <td><?= $no++ ?></td>
                                 <td><?= $bg->title ?></td>
-                                <td><?= $bg->date_blog ?></td>
+                                <td><?= date('d-m-Y', strtotime($bg->date_blog)) ?></td>
                                 <td><?= $bg->category ?></td>
                                 <td><?= $bg->tag ?></td>
                                 <td><?= $bg->writer ?></td>

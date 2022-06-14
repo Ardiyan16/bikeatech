@@ -79,6 +79,7 @@
                         <h6 class="collapse-header">Custom Utilities:</h6>
                         <a class="collapse-item" href="<?= base_url('Admin/portfolio') ?>">Portfolio</a>
                         <a class="collapse-item" href="<?= base_url('Admin/images_portfolio') ?>">Images Portfolio</a>
+                        <a class="collapse-item" href="<?= base_url('Admin/category') ?>">Category Portfolio</a>
                     </div>
                 </div>
             </li>

@@ -9,7 +9,7 @@
     </div>
     <div class="card shadow py-2">
         <div class="card-body">
-            <a href="<?= base_url('Admin/blog') ?>" class="btn btn-primary mb-3"> <span class="fa fa-arrow-alt-circle-left"></span> Kembali</a>
+            <a href="<?= base_url('Admin/blog') ?>" class="btn btn-primary mb-3"> <span class="fa fa-arrow-alt-circle-left"></span> Back</a>
             <hr>
 
             <form action="<?= base_url('Admin/update_blog'); ?>" method="POST" enctype="multipart/form-data">
@@ -32,7 +32,8 @@
                 <label>Images</label>
                 <input type="hidden" name="old_images" value="<?= $edit->images ?>">
                 <input name="images" type="file" placeholder="" class="form-control">
-                <p>maximum 3MB</p>
+                <img src="<?= base_url('assets/img/images_blog/'. $edit->images ) ?>" width="100">
+                <p>maximum size 3MB</p>
                 <!-- <br> -->
                 <label>Writer</label>
                 <input name="writer" type="text" value="<?= $edit->writer ?>" placeholder="Writer..." class="form-control" required>
