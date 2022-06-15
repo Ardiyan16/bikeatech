@@ -288,7 +288,7 @@ Start Call To Action
                                 ?>
                             </p> -->
                             <hr>
-                            <a class="btn btn-main" href="<?= base_url('Users/detail_blog/' . $bg->title) ?>">Read more</a>
+                            <a class="btn btn-main" href="<?= base_url('Users/detail_blog/' . $bg->id) ?>">Read more</a>
                         </div>
                     </div>
                 </article>

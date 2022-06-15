@@ -27,6 +27,7 @@ class M_bikea extends CI_Model
     public function get_blog2()
     {
         $this->db->limit(3);
+        $this->db->order_by('id', 'desc');
         return $this->db->get($this->blog)->result();
     }
 
@@ -57,6 +58,16 @@ class M_bikea extends CI_Model
         $this->db->join('partner', 'portfolio.id_partner = partner.id', 'left outer');
         $this->db->join('category_portfolio', 'portfolio.id_category = category_portfolio.id_cat', 'left outer');
         return $this->db->get()->result();
+    }
+
+    public function get_detailPortfolio($id)
+    {
+        $this->db->select('portfolio.*, partner.name_partner, partner.images, category_portfolio.*');
+        $this->db->from('portfolio');
+        $this->db->join('partner', 'portfolio.id_partner = partner.id', 'left outer');
+        $this->db->join('category_portfolio', 'portfolio.id_category = category_portfolio.id_cat', 'left outer');
+        $this->db->where('portfolio.id', $id);
+        return $this->db->get()->row();
     }
 
     public function get_images()
