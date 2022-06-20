@@ -4,10 +4,10 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h2>Portfolio</h2>
+                <h2>Blog</h2>
                 <ol class="breadcrumb header-bradcrumb">
                     <li><a href="index.html">Home</a></li>
-                    <li class="active">Portfolio</li>
+                    <li class="active">Blog</li>
                 </ol>
             </div>
         </div>
@@ -16,6 +16,14 @@
 
 <section class="posts section">
     <div class="container">
+        <!-- section title -->
+        <div class="col-12">
+            <div class="title text-center ">
+                <h2> Latest <span class="color">Posts</span></h2>
+                <div class="border"></div>
+                <p>Blog kami berisi mengenai beberapa artikel yang membantu wawasan anda mengenai dunia IT dan beberapa penjelasan mengnai dunia IT.</p>
+            </div>
+        </div>
         <div class="row">
             <!-- /section title -->
             <!-- single blog post -->
